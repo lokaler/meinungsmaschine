@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Meinungsmaschine</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no minimal-ui" />
+
+		<!-- JQuery -->
+		<script src="js/jquery-1.9.1.js"></script>
+
+		<!-- Font Awesome -->
+		<link  href="css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Ubuntu Font-->
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+
+
+		<script src="js/jquery-ui.min.js"></script>
+		<link  href="css/jquery-ui.min.css" rel="stylesheet">
+
+		<script src="js/sort.js"></script> 
+
+		<!-- Bootstrap + slider-->
+		<link  href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script> 
+
+
+		<!-- <link  href="css/styles.css" rel="stylesheet">  -->
+
+		<style type="text/css">
+
+
+		/*Main Stuff*/
+
+
+		/*Main Stuff*/
+
+			body {
+			    font-family: "Ubuntu",sans-serif !important;
+			    font-size:14px;
+			    color: #5E7582;
+			   	background-color:  #f9f9f9;
+			}
+
+
+
+			#bottom{
+				margin-top: 20px;
+			}
+
+
+
+		/*Fixed Container*/
+
+		.fixedBar {
+		    background-color: white;
+		    position: fixed !important;
+		    top: 0;
+		    z-index: 999;
+		}
+
+		#fixedContainer #showWhenFixed{
+			display: none;
+		}
+
+
+		.fixedBar #showWhenFixed {
+		    display: initial !important;
+
+		}
+
+
+		/*Graphic*/
+
+			
+			#graphicContainer {
+			    /*padding-top: 30px;*/
+			    background-color: #F9F9F9;
+			    margin-top: 12px;
+			}
+
+
+
+
+
+			/*Navagation on the left on big screen*/
+
+			.navigation {
+				z-index: 99;
+			    border: 1px solid #ddd;
+			    height: 61px;
+			    line-height: 60px;
+			    margin: 10px;
+			    text-align: center;
+			    transition: all 0.5s ease;
+			}
+
+			.navigation:hover {
+				background-color: #c8c8c8;
+				cursor: pointer;
+				color: white;
+				opacity: 0.7;
+			}
+
+			.navActive{
+				background-color: #5E7582;
+				color: white
+			}
+
+			.navsmall{
+				padding-top: 20px;
+				padding-bottom: 5px;
+			}
+
+
+			/*Graphic Barcharts*/
+
+			.infoContent {
+			    height: 35px;
+			    /*line-height: 30px;*/
+			    margin-top: 10px;
+			    line-height: 15px;
+			}
+
+			.infoContent div {
+			    display: inline-block;
+
+			    height: 100%;
+
+			    outline: 2px solid #F9F9F9;
+
+			}
+
+/*			.gesamtBar.infoContent div {
+    display: inline-block;
+    height: 100%;
+    outline: 2px solid gray;
+}
+*/
+			.gesamtBar{
+				/*height: 50px;*/
+				margin-bottom: 35px;
+			}
+
+
+			.form-control{
+				border-radius: 0px;
+			}
+
+
+			/*Color Barchart*/
+
+			.frauen{background-color: #a90d00;}
+			.maenner{background-color: #A99E93;}
+
+			.cdu{background-color: #333131}
+			.spd{background-color: #EC4557}
+			.gruene{background-color: #6FC06A}
+			.linke{background-color: #8E59A2}
+			.afd{background-color: #6CC0E8}
+			.fdp{background-color: #FFED00}
+			.andere{background-color: #C6C6C6}
+
+
+			.katInnen{background-color: #2182a3}
+			.katAussen{background-color: #fbc00b}
+			.katGesell{background-color: #c55060}
+			.katWirt{background-color: #9aaf58}
+
+			.alt19{background-color: #f7fbff}
+			.alt29{background-color: #deebf7}
+			.alt39{background-color: #c6dbef}
+			.alt49{background-color: #9ecae1}
+			.alt59{background-color: #6baed6}
+			.alt69{background-color: #4292c6}
+			.alt79{background-color: #2171b5}
+			.alt80{background-color: #084594}
+
+
+
+			/*Tooltip*/
+			.tooltip{
+				z-index: 9999;
+				border-radius: 0px;
+			}
+
+
+			.tooltip.top .tooltip-arrow {
+			  bottom: 0;
+			  left: 50%;
+			  margin-left: -5px;
+			  border-top-color: #ddd;
+			  border-width: 5px 5px 0;
+			}
+			.tooltip-inner {
+			  color: #000;
+			  background: #ddd;
+			  border: solid 1px #ddd;
+			  border-radius: 0px !important;
+			}
+
+
+
+
+			/*Legend*/
+
+			.legendItem {
+			    float: left !important;
+			    height: 14px !important;
+			    margin-right: 2px;
+			    margin-top: 7px;
+			    width: 10px;
+
+			}
+
+			.legendText {
+			    float: left !important;
+			    padding-right: 10px;
+			    line-height: 30px;
+			}
+
+
+
+
+
+
+
+
+
+
+
+	/*Buttons*/
+@media (max-width: 991px){
+
+.navigation {
+	border: 1px solid #ddd;
+	height: 35px;
+	line-height: 34px;
+	margin: 0px;
+	text-align: center;
+	transition: all 0.5s ease;
+	font-size: 14px;
+}
+
+.item small{
+	z-index: 99999;
+}
+}
+
+
+
+			@media (max-width: 767px){
+
+
+				.fixedBar {
+					top: -35px;
+				}
+
+				.noPaddingRight{
+					padding-right: 0px !important;
+				}
+
+				.noPaddingLeft{
+					padding-left: 0px !important;
+				}
+
+				.noPaddingLeft .infoContent{
+					line-height: 17px !important;
+				}
+
+				.barTag {
+				    width: 7px;
+				}
+
+				.container {
+				    padding-left: 40px;
+				    padding-right: 40px;
+				}
+
+
+
+				.barCounter {
+					display: none
+				}
+
+
+/*				.barCounterNumberSmall{
+					display: inline-block;
+				}*/
+
+				.barGastName {
+				    font-size: 13px;
+
+				}
+
+				body{
+					font-size: 13px;
+				}
+
+				h4, .h4 {
+					font-size: 14px;
+				}
+
+
+
+			}
+
+			#graphicButton{
+				border-radius: 0px;
+				width: 100%
+			}
+
+			#buttonsRow{
+				/*padding-top: 20px;*/
+				padding-bottom: 25px;
+				padding-top: 8px;
+			}
+
+			#buttonMaischberger{
+				background-color: #86cb36
+			}
+			#buttonIllner{
+				background-color: #ea8c1d
+			}
+			#buttonWill{
+				background-color: #37c0ff
+			}
+			#buttonHart{
+				background-color: #905ca3
+			}
+
+			.topBarShows {
+			    color: #fff;
+			    cursor: pointer;
+			    display: inline-block;
+			    padding: 7px;
+			    text-align: center;
+			    width: 100%;
+			    transition: all 0.5s ease;
+			    border: 1px solid white;
+			}
+
+			.topBarShows:hover{
+				opacity: 0.8;
+			}
+
+/*			.showButton .fa-times{
+				display: none;
+				padding-left: 5px;
+			}
+
+			.showButton.active .fa-times{
+				display: inline;
+			}*/
+
+/*			.showButton.active .fa-square-o{
+				display: none
+			}*/
+
+
+			.showButton.active{
+				opacity: 1.0;
+			}
+
+
+			.input-group-addon {
+			    border-radius: 0 !important;
+			}
+
+
+			.fa-check{
+				display: none;
+			}
+
+
+
+			.showButton.active .fa-check {
+			    display: inline !important;
+			    padding-left: 5px;
+			}
+
+
+
+
+		/*Carousel*/
+
+			.carousel-control.left {
+			    background-image: none;
+			    cursor: default;
+			}
+
+			.carousel-control.right {
+			    background-image: none;
+			    cursor: default;
+			}
+
+			.carousel-indicators .active {
+			    background-color: #5E7582;
+			}
+
+			.carousel-indicators li {
+			    border: 1px solid #ddd;
+			    border-radius: 0;
+			}
+
+			.carousel-indicators {
+			    bottom: -30px;
+			    display: none;
+			}
+
+/*			@media (max-width: 992px){
+				.carousel-indicators {
+				    display: block !important;
+				}
+			}*/
+
+
+			.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+			    display: none;
+			}
+
+			.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-right {
+			    display: none;
+			}
+
+			.carousel-control {
+				top: 50px !important;
+				width: 0%;
+			}
+
+
+
+
+	/*Social and Logo */
+
+			.social{
+				height: 100%;
+			}
+
+			.social .fa {
+			    color: #b4b5b6;
+			    display: inline-table;
+			    float: right;
+			    font-size: 20px;
+			    height: 100%;
+			    padding: 12px;
+			    cursor: pointer;
+			    transition: all 0.5s ease;
+			}
+
+			.social .fa:hover{
+			    color: #ddd;
+			}
+
+			.social .info {
+			    color: #b4b5b6;
+			    display: inline-table;
+			    float: right;
+			    height: 100%;
+			    cursor: pointer;
+			    transition: all 0.5s ease;
+			}
+
+			.social .info:hover{
+			    color: #ddd;
+			}
+
+
+			#dacosto {
+			    display: inline-block;
+			    height: 20px;
+			    float: right;
+			}
+
+
+
+/*	Navgation Go Up*/
+#goUp {
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    font-size: 22px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    line-height: 20px;
+}
+
+
+
+
+			#goUp:hover {
+				color: #ddd;
+			}
+
+
+/*			#impressum{
+
+				bottom: 20px;
+			    cursor: pointer;
+			    font-size: 15px;
+			    position: fixed;
+			    right: 35px;
+			    text-align: center;
+			    transition: all 0.5s ease 0s;
+			    color: #b4b5b6 !important;
+
+			}
+
+			#impressum a{color: #b4b5b6 !important;}
+			*/
+
+/*			#standInfo{
+				position: relative;
+
+			}
+*/
+#embed {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    line-height: 5px;
+    padding: 5px;
+    z-index: 999;
+}
+
+
+.mmImage {
+    float: right;
+    position: relative;
+    top: 4px;
+    width: 163px;
+}
+
+.extraInfoText{
+	padding-top: 5px;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+
+.bottomText{
+	margin-top: 5px;
+}			
+
+
+		</style>
+
+
+
+
+
+</head>
+	
+<body>
+
+
+
+	<div class="container">
+
+		<div id = "top" class="row">
+
+
+			<!-- graphicContainers -->
+			<div class="row" id = "graphicContainer">
+
+
+				<!-- Infos -->
+				<div class="col-xs-12">
+
+
+					<!-- Carousel -->
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" role="listbox">
+					    <div class="item active" value = "0">
+
+
+
+							<!-- Frauenanteil -->
+
+							<div class="row">
+								<!-- Barchart -->
+								<div class="col-xs-12"><h4>Frauenanteil der vier Polit-Talkshows<br><small><span class = "anzahlShows"></span> Sendungen und <span class = "anzahlGaeste"></span> Gäste seit Januar 2017</small></h4></div>
+							  	<div class="col-sm-10 col-xs-9" id = "barchartFM" ></div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-sm-2 col-xs-3 extraInfoText noPaddingLeft" id = "infoFM">							
+							  	</div>
+							  	<div class="col-xs-12"><p class = "textFM"></p></div>
+
+							</div>
+
+					    </div>
+					    <div class="item" value = "1">
+
+							<div class="row">
+								<!-- Barchart -->
+								<div class="col-xs-12"><h4>Politikeranteil der vier Polit-Talkshows<br><small><span class = "anzahlShows"></span> Sendungen und <span class = "anzahlGaeste"></span> Gäste seit Januar 2017</small></h4></div>
+							  	<div class="col-sm-10 col-xs-9" id = "barchartPol" ></div>
+
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-sm-2 col-xs-3 extraInfoText noPaddingLeft" id = "infoPol">							
+							  	</div>
+							  	<div class="col-xs-12"><p class = "textPol"></p></div>
+
+							</div>
+
+						</div>
+
+
+				   		<div class="item" value = "2">
+
+							<div class="row">
+								<!-- Barchart -->
+								<div class="col-xs-12"><h4>Themengebiete der vier Polit-Talkshows<br><small><span class = "anzahlShows"></span> Sendungen und <span class = "anzahlGaeste"></span> Gäste seit Januar 2017</small></h4></div>
+							  	<div class="col-sm-10 col-xs-9" id = "barchartKat" ></div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-sm-2 col-xs-3 extraInfoText noPaddingLeft" id = "infoKat">							
+							  	</div>
+							  	<div class="col-xs-12"><p class = "textKat"></p></div>
+
+							</div>
+					    </div>
+
+				    	<div class="item" value = "3">
+
+							<div class="row">
+								<!-- Barchart -->
+								<div class="col-xs-12"><h4>Altersverteilung der vier Polit-Talkshows<br><small><span class = "anzahlShows"></span> Sendungen und <span class = "anzahlGaeste"></span> Gäste seit Januar 2017</small></h4></div>
+							  	<div class="col-sm-10 col-xs-9" id = "barchartAlt" ></div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-sm-2 col-xs-3 extraInfoText noPaddingLeft" id = "infoAlt">							
+							  	</div>
+							  	<div class="col-xs-12"><p class = "textAlt"></p></div>
+
+							</div>
+
+					    </div>
+
+					  </div>
+
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+
+				</div>
+
+				<div class = "col-xs-12 bottomText">
+
+						<div class="pull-left ">
+							<p>S<small>tand: <span class = "stand"></span></small></p>
+						</div>
+						<div class="pull-right logoDacosto">
+							<a href="http://apps.dacosto.com/meinungsmaschine" target="_blank">
+									<p>mehr auf &nbsp;&nbsp; <img src="img/mm_embed366.png" class="img-responsive mmImage" alt="mm"></p>
+							</a>
+						</div>
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+
+	<script type="text/javascript">
+
+
+
+
+
+	var showThis = window.location.hash;
+
+	if (showThis.indexOf("frauenquote") != -1){$('.carousel').carousel(0);}
+	else if (showThis.indexOf("parteien") != -1){$('.carousel').carousel(1);}
+	else if (showThis.indexOf("themengebiete") != -1){$('.carousel').carousel(2);}
+	else if (showThis.indexOf("altersverteilung") != -1){$('.carousel').carousel(3);}
+	else{};
+		
+		
+	</script>
+
+
+
+
+
+	<script src="js/scriptembed.js"></script> 
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,589 @@
+			html, body {
+			    height: 100%;
+			    margin: 0;
+			    padding: 0;
+			    width: 100%;
+			}
+
+			body {
+			    margin: 0;
+			    padding: 0;
+			    font-family: "Ubuntu",sans-serif !important;
+			    font-size:14px;
+			}
+
+
+			#headerOuterWrapper {
+			    position: fixed;
+			    top: 0;
+			    width: 100%;
+			    z-index: 9999
+			}
+
+			#headerWrapper{
+				background-color: white;
+			    padding-left: 30px;
+			    padding-right: 30px;
+			    padding-top: 30px;
+			    position: relative;
+			    z-index: 30;
+			}
+
+
+			#topLeiste{
+				height: 50px;
+			}
+
+			#topTitle{
+				float: left;
+				font-size: 20px;
+				font-weight: bold;
+				height: 45px;
+
+			}
+
+			#topIcons{
+				float: right;
+				color: gray;
+				font-size: 25px;
+				padding-right: 15px;
+
+			}
+
+			#topIcons .fa {
+				padding: 2px;
+			}
+			
+
+			#topIcons .fa:hover {
+				cursor: pointer;
+				color: black
+			}
+
+
+			.gray{
+				color: gray;
+			}
+
+
+			#topLegende {
+			    height: 55px;
+			}
+
+			.topBarTag {
+				opacity: 0.8;
+			    display: inline-block;
+			    height: 15px;
+			    margin-left: 8px;
+			    margin-right: 4px;
+			    position: relative;
+			    width: 6px;
+			}
+
+			.topBarTagZwoelfMonate{
+				margin-left: 10px;
+			}
+
+			.topBarShows {
+			    color: #fff;
+			    cursor: pointer;
+			    display: inline-block;
+			    padding: 7px;
+			    text-align: center;
+			    width: 100%;
+			}
+
+
+
+			.topBarShows:hover{
+				/*background-color: #f3f1f1;*/
+				opacity: 1.0;
+			}
+
+
+
+
+			#topSearchBar{
+				display: none;
+				margin: 10px;
+
+			}
+
+			#topInnerSearchBar{
+
+				font-family: "Ubuntu",sans-serif !important;
+
+			}
+
+			input[type="text"] {
+			  border: solid 1px #dcdcdc;
+			  transition: box-shadow 0.3s, border 0.3s;
+			}
+
+			input[type="text"]:focus,
+			input[type="text"].focus {
+			  border: solid 1px #707070;
+			  box-shadow: 0 0 5px 1px #969696;
+			}
+
+
+			/*jQuery search styles*/
+			.ui-widget-content {
+			    color: #333;
+			}
+
+			.ui-widget {
+			    font-family: "Ubuntu",sans-serif !important;
+			    font-size: 14px;
+			    z-index: 999999999;
+			}
+
+
+			.ui-menu .ui-menu-item {
+			    cursor: pointer;
+			    list-style-image: url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
+			    margin: 0;
+			    min-height: 0;
+			    padding: 3px 1em 3px 0.4em;
+			    position: relative;
+			    z-index: 999999999;
+			}
+
+						
+			
+			#alleGaesteWrapper {
+			    box-sizing: border-box;
+			    height: auto;
+			    overflow: unset;
+			}
+
+			.gastWrapper{
+				height: 94px;
+			}
+
+			.gastInfo{
+				position: relative;
+    			height: 20px;
+			}
+
+			.gastName{
+				display: inline;
+	    		font-size: 16px;
+			}
+
+			.gastAnzahlShows{
+	    		color: gray;
+				display: inline-block;
+				width: 62px;
+			}
+
+			.moreInfo{
+			    color: gray;
+			    padding-left: 10px;
+			    transition-duration: 0.2s;
+			}
+
+			.moreInfo:hover{
+				cursor: pointer;
+				color: black;
+			}
+
+
+			
+
+
+
+
+			.fa{
+
+				line-height: 0;
+			}
+
+
+			/*BAR WRAPPER*/
+			.barWrapper{
+				position: relative;
+				width: 100%
+			}
+
+				/*Bar*/
+				.bar {
+				    background-color: #f3f1f1;
+				    height: 25px;
+				    padding-right: 3px;
+				    /*width: 100%;*/
+				    overflow: hidden;
+				    position: relative;
+				    cursor: pointer;
+				}
+
+				.barTag {
+				    float: left;
+				    height: 25px;
+				    opacity: 0.8;
+				    position: absolute;
+				    width: 10px;
+
+				}
+
+				.timeTag{
+					float: left;
+				    height: 25px;
+				    position: absolute;
+					border-left: 1px solid #c2c2c2
+				}
+
+				/*Time Bar*/
+				.timeBar {
+				    border-bottom: 1px solid #ddd;
+				    height: 18px;
+
+				    overflow: hidden;
+				    position: relative;
+				    top: -13px;
+				}
+
+					.timeBarTag{
+						float: left;
+					    height: 15px;
+					    position: absolute;
+			    		font-size: 12px;
+			    		padding-left: 5px;
+					}
+
+					/*barTag Color*/
+					.barTag{
+						background-color: #86cb36;
+					}
+					.illner{
+						background-color: #ea8c1d;
+					}
+					.will{
+						background-color: #37c0ff;
+					}
+					.hartAberfair{
+						background-color: #905ca3;
+					}
+					.maischberger{
+						background-color: #86cb36;
+					}
+
+			.hrSepperator{
+				margin: 12px 5%;
+				color: white;
+			}
+
+
+
+
+		@media (max-width: 768px){
+
+			body {
+			    font-size:12px;
+			}
+
+			.gastName {
+			    font-size: 14px;
+			}
+
+
+			.gastAnzahlShows {
+			   /* font-size: 12px;*/
+			    width: 60px;
+			}
+
+			#topLegende {
+			    /*font-size: 12px;*/
+			}
+
+			#topTitle {
+			    font-size: 17px;
+			}
+
+
+			#topInfo {
+			    /*font-size: 12px;*/
+			}
+		}
+
+
+		.infoSpace {
+		    line-height: 20px;
+		    overflow: hidden;
+		    padding-bottom: 0;
+		    padding-top: 0;
+		    position: relative;
+		    display: none;
+		    margin-bottom: 15px;
+		}
+
+		.infoTag{
+			display: inline-block;
+		    height: 15px;
+		    margin-right: 10px;
+		    width: 6px;
+		}
+
+		.infoButton {
+		    font-size: 17px;
+		    padding-right: 15px;
+		    cursor: pointer;
+		}
+
+
+
+		.Infogrey{
+			background-color: #ececec;
+		}
+
+		a{
+			color: #DE8F63;
+		}
+
+		.gastExtaInfoText{
+			display: inline;
+	    	/*font-size: 14px;*/
+	    	color: gray;
+	    	/*left: 79px;
+    		position: absolute;*/
+		}
+
+
+				.info{
+			padding: 5px;
+		}
+
+/*		.gastExtraInfo{
+			display: none;
+    		padding-bottom: 5px;
+    		color: gray;
+		}*/
+
+		.showNameInfoWrapper{
+		    display: inline-block;
+		    width: 90px;
+		}
+
+		.dateNameInfoWrapper{
+			display: inline-block;
+		    width: 60px;
+		}
+
+		.kategorieInfoWrapper {
+		    background-color: #ddd;
+		    color: black;
+		    display: inline-block;
+		    font-size: 10px;
+		    padding-left: 2px;
+		    padding-right: 2px;
+		    text-transform: uppercase;
+		}
+
+
+		.parteiImTitel{
+
+			background-color: #ddd;
+		    color: black;
+		    display: inline-block;
+		    font-size: 10px;
+		    padding-left: 2px;
+		    padding-right: 2px;
+
+		}
+
+		.showTitleNameInfoWrapper{
+			/*display: table;*/
+			padding-left: 15px;
+		    /*width: 100px;*/
+		}
+
+		.infoShows{
+			/*float: left*/
+		}
+
+		.closeButton{
+			display: none;
+		    font-size: 19px;
+		    color: gray;
+		    padding-left: 10px;
+		}
+
+		.closeButton:hover{
+			cursor: pointer;
+			color: black;
+
+		}
+
+
+		.openInfoIcon{
+			transition-duration: 0.2s;
+		}
+
+		.gastWrapper.open .openInfoIcon{
+			
+			transform: rotate(90deg);
+		}
+
+
+
+
+
+
+
+
+	#tooltip {
+		display: none;
+		font-size: 12px;
+		-moz-user-select: none;
+	    background: none repeat scroll 0 0 padding-box rgba(235, 235, 235, 0.8);
+	    border-color: rgba(0, 0, 0, 0.45);
+	    border-radius: 3px;
+	    border-style: solid;
+	    border-width: 2px;
+	    color: #111;
+	    padding: 1px 6px;
+	    position: absolute;
+	    /*white-space: nowrap;*/
+	    z-index: 6666;
+	    box-shadow: 0 0 2px rgba(0, 0, 0, 0.65);
+	    overflow: hidden;
+	    width: 450px;
+	    /*word-break: break-all;*/
+	    pointer-events:
+	}
+
+
+.barWrapper{
+  min-height: 80px;
+  width: 100%;
+}
+
+.barCounter {
+	cursor: pointer;
+    color: gray;
+    float: left;
+    font-size: 11px;
+    height: 80px;
+    text-align: center;
+    width: 80px;
+}
+
+.barCounterNumber{
+  font-size: 39px;
+  text-align: center;
+  display: block;
+}
+
+
+.openextraData:hover{
+	opacity: 0.7;
+	transition: all 0.5s ease;
+}
+
+.barGastName{
+  padding-top: 7px;
+  font-size: 16px;
+  padding-bottom: 5px;
+  cursor: pointer;
+}
+
+#topLegende .fa{
+	font-size: 16px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+
+/*.fa-times{
+    display: none;
+}*/
+
+/*.showButton.active .fa-times{
+	display: inline;
+}
+
+.showButton.active .fa-square-o{
+	display: none
+}*/
+
+
+.showButton{
+	/*opacity: 0.5;*/
+}
+
+.showButton.active{
+	opacity: 1.0;
+}
+
+
+.notActive{
+	opacity: 0.3;
+}
+
+#buttonMaischberger{
+	background-color: #3685C7
+}
+#buttonIllner{
+	background-color: #C00D7C
+}
+#buttonWill{
+	background-color: #C38E12
+}
+#buttonHart{
+	background-color: #5DB12E
+}
+
+
+
+#timeLine {
+    height: 20px;
+    width: 100%;
+}
+
+#timeLine .bar {
+background-color: #fff;
+ height: 15px;
+}
+
+#tempGraphic{
+
+}
+
+
+.barGastName .fa{
+	font-size: 20px
+}
+
+
+
+#timeLine .placeholder {
+    float: left;
+    height: 100%;
+    width: 80px;
+}
+
+
+
+
+/*Info Graphic*/
+#graphic{
+	height: 250px;
+	background-color: #ddd;
+}
+
+
+
+
+
+@media (max-width: 768px){
+	.monthTag {
+		display: none;
+	}
+}
+
+
+.barCounterNumberSmall{
+	display: none;
+}

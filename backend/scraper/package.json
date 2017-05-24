@@ -1,0 +1,33 @@
+{
+  "name": "tvscrape",
+  "author": "g-div",
+  "version": "0.0.0",
+  "description": "scrape information from a list of german tv-shows...",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "diskdb": "^0.1.14",
+    "fs-extra": "^0.12.0",
+    "lodash": "^2.4.1",
+    "noodlejs": "^0.3.0",
+    "mongojs": "~0.17.0",
+    "pg": "~4.1.0",
+    "underscore": "~1.7.0",
+    "async": "~0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "./index.js"
+  },
+  "keywords": [
+    "tv",
+    "scraper"
+  ],
+  "license": "ISC",
+  "config": {
+    "debug": false,
+    "maxCacheSize": 128,
+    "recipes": "recipes",
+    "out": "data/results"
+  }
+}

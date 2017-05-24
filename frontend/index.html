@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Meinungsmaschine</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no minimal-ui" />
+
+		<meta name="description" content="Beobachtet fortlaufend Gäste und Themen der Polit-Talkshows Hart aber fair, Maybrit Illner, Anne Will und Sandra Maischberger.">
+		<meta property="og:image" content= "URL fb" />
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@dcsto">
+		<meta name="twitter:title" content="Meinungsmaschine - Polit-Talkshow Monitor">
+		<meta name="twitter:description" content="Beobachtet fortlaufend Gäste und Themen der Polit-Talkshows Hart aber fair, Maybrit Illner, Anne Will und Sandra Maischberger.">
+		<meta name="twitter:image:src" content="http://apps.lokaler.com/meinungsmaschine/img/meinungsmaschine_socialmedia.png">
+
+		<meta property="og:url"                content="http://apps.lokaler.com/meinungsmaschine/" />
+		<meta property="og:type"               content="website" />
+		<meta property="og:title"              content="Meinungsmaschine - Polit-Talkshow Monitor" />
+		<meta property="og:description"        content="Beobachtet fortlaufend Gäste und Themen der Polit-Talkshows Hart aber fair, Maybrit Illner, Anne Will und Sandra Maischberger." />
+		<meta property="og:image"              content="http://apps.lokaler.com/meinungsmaschine/img/meinungsmaschine_socialmedia.png" />
+
+		<!-- JQuery -->
+		<script src="js/jquery-1.9.1.js"></script>
+
+		<!-- Font Awesome -->
+		<link  href="css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Ubuntu Font-->
+		<link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+
+
+		<script src="js/jquery-ui.min.js"></script>
+		<link  href="css/jquery-ui.min.css" rel="stylesheet">
+
+		<script src="js/sort.js"></script> 
+
+		<script src="js/jquery.fracs-0.15.0.min.js"></script> 
+
+
+		<!-- Bootstrap + slider-->
+		<link  href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/bootstrap.min.js"></script> 
+
+
+		<script src="js/bootstrap-touch-carousel.js"></script> 
+		<link  href="css/bootstrap-touch-carousel.css" rel="stylesheet"> 
+
+		<link  href="css/styles.css" rel="stylesheet"> 
+
+		<style type="text/css">
+
+
+		/*Main Stuff*/
+
+			body {
+			    font-family: "Ubuntu",sans-serif !important;
+			    font-size:14px;
+			    color: #5E7582;
+			}
+
+			#top{
+				padding-top: 13px;
+			}
+
+			#bottom{
+				margin-top: 20px;
+			}
+
+
+
+		/*Fixed Container*/
+
+		.fixedBar {
+		    background-color: white;
+		    position: fixed !important;
+		    top: 0;
+		    z-index: 999;
+		}
+
+		#fixedContainer #showWhenFixed{
+			display: none;
+			padding-top: 10px;
+		}
+
+
+		.fixedBar #showWhenFixed {
+		    display: inline-block !important;
+
+		}
+
+
+		/*Graphic*/
+
+			
+			#graphicContainer {
+			    /*padding-top: 30px;*/
+			    background-color: #F9F9F9;
+			    margin-top: 16px;
+			}
+
+
+
+
+
+			/*Navagation on the left on big screen*/
+
+			.navigation {
+				z-index: 99;
+			    border: 1px solid #ddd;
+			    height: 61px;
+			    line-height: 60px;
+			    margin: 10px;
+			    text-align: center;
+			    transition: all 0.5s ease;
+			}
+
+			.navigation:hover {
+				background-color: #c8c8c8;
+				cursor: pointer;
+				color: white;
+				opacity: 0.7;
+			}
+
+			.navActive{
+				background-color: #5E7582;
+				color: white
+			}
+
+.navsmall {
+    padding-bottom: 20px;
+}
+
+
+			/*Graphic Barcharts*/
+
+			.infoContent {
+			    height: 35px;
+			    /*line-height: 30px;*/
+			    margin-top: 10px;
+			}
+
+			.infoContent div {
+			    display: inline-block;
+
+			    height: 100%;
+
+			    outline: 2px solid #F9F9F9;
+
+			}
+
+/*			.gesamtBar.infoContent div {
+    display: inline-block;
+    height: 100%;
+    outline: 2px solid gray;
+}
+*/
+			.gesamtBar{
+				/*height: 50px;*/
+				margin-bottom: 35px;
+			}
+
+
+			.form-control{
+				border-radius: 0px;
+			}
+
+
+			/*Color Barchart*/
+
+			.frauen{background-color: #a90d00;}
+			.maenner{background-color: #A99E93;}
+
+			.cdu{background-color: #333131}
+			.spd{background-color: #EC4557}
+			.gruene{background-color: #6FC06A}
+			.linke{background-color: #8E59A2}
+			.afd{background-color: #6CC0E8}
+			.fdp{background-color: #FFED00}
+			.andere{background-color: #C6C6C6}
+
+
+			.katInnen{background-color: #2182a3}
+			.katAussen{background-color: #fbc00b}
+			.katGesell{background-color: #c55060}
+			.katWirt{background-color: #9aaf58}
+
+			.alt19{background-color: #f7fbff}
+			.alt29{background-color: #deebf7}
+			.alt39{background-color: #c6dbef}
+			.alt49{background-color: #9ecae1}
+			.alt59{background-color: #6baed6}
+			.alt69{background-color: #4292c6}
+			.alt79{background-color: #2171b5}
+			.alt80{background-color: #084594}
+
+
+
+			/*Tooltip*/
+			.tooltip{
+				z-index: 9999;
+				border-radius: 0px;
+			}
+
+
+			.tooltip.top .tooltip-arrow {
+			  bottom: 0;
+			  left: 50%;
+			  margin-left: -5px;
+			  border-top-color: #ddd;
+			  border-width: 5px 5px 0;
+			}
+			.tooltip-inner {
+			  color: #000;
+			  background: #ddd;
+			  border: solid 1px #ddd;
+			  border-radius: 0px !important;
+			}
+
+
+
+
+			/*Legend*/
+
+			.legendItem {
+			    float: left !important;
+			    height: 14px !important;
+			    margin-right: 2px;
+			    margin-top: 7px;
+			    width: 10px;
+
+			}
+
+			.legendText {
+			    float: left !important;
+			    padding-right: 10px;
+			    line-height: 30px;
+			}
+
+
+
+
+
+
+
+
+
+
+
+	/*Buttons*/
+@media (max-width: 991px){
+
+.navigation {
+	border: 1px solid #ddd;
+	height: 35px;
+	line-height: 34px;
+	margin: 0px;
+	text-align: center;
+	transition: all 0.5s ease;
+	font-size: 14px;
+}
+
+.item small{
+	z-index: 99999;
+}
+}
+
+
+
+			@media (max-width: 767px){
+
+
+				.fixedBar {
+					top: -35px;
+				}
+
+				.noPaddingRight{
+					padding-right: 0px !important;
+				}
+
+				.noPaddingLeft{
+					padding-left: 0px !important;
+				}
+
+				.noPaddingLeft .infoContent{
+					line-height: 2px !important;
+				}
+
+				.barTag {
+				    width: 7px;
+				}
+
+				.container {
+				    padding-left: 30px;
+				    padding-right: 30px;
+				}
+
+
+
+				.barCounter {
+					display: none
+				}
+
+
+/*				.barCounterNumberSmall{
+					display: inline-block;
+				}*/
+
+				.barGastName {
+				    font-size: 13px;
+
+				}
+
+				body{
+					font-size: 13px;
+				}
+
+				h4, .h4 {
+					font-size: 14px;
+				}
+
+
+
+			}
+
+			#graphicButton{
+				border-radius: 0px;
+				width: 100%
+			}
+
+			#buttonsRow{
+				/*padding-top: 20px;*/
+				padding-bottom: 25px;
+				padding-top: 8px;
+			}
+
+			#buttonMaischberger{
+				background-color: #86cb36
+			}
+			#buttonIllner{
+				background-color: #ea8c1d
+			}
+			#buttonWill{
+				background-color: #37c0ff
+			}
+			#buttonHart{
+				background-color: #905ca3
+			}
+
+			.topBarShows {
+			    color: #fff;
+			    cursor: pointer;
+			    display: inline-block;
+			    padding: 7px;
+			    text-align: center;
+			    width: 100%;
+			    transition: all 0.5s ease;
+			    border: 1px solid white;
+			}
+
+			.topBarShows:hover{
+				opacity: 0.8;
+			}
+
+
+
+			.showButton.active{
+				opacity: 1.0;
+			}
+
+
+			.input-group-addon {
+			    border-radius: 0 !important;
+			}
+
+
+			.fa-check{
+				display: none;
+			}
+
+
+
+			.showButton.active .fa-check {
+			    display: inline !important;
+			    padding-left: 5px;
+			}
+
+
+
+
+		/*Carousel*/
+
+			.carousel-control.left {
+			    background-image: none;
+			    cursor: default;
+			}
+
+			.carousel-control.right {
+			    background-image: none;
+			    cursor: default;
+			}
+
+			.carousel-indicators .active {
+			    background-color: #5E7582;
+			}
+
+			.carousel-indicators li {
+			    border: 1px solid #ddd;
+			    border-radius: 0;
+			}
+
+			.carousel-indicators {
+			    bottom: -30px;
+			    display: none;
+			}
+
+
+
+			.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-left {
+			    display: none;
+			}
+
+			.carousel-control .icon-prev, .carousel-control .glyphicon-chevron-right {
+			    display: none;
+			}
+
+			.carousel-control {
+				top: 50px !important;
+				width: 0%;
+			}
+
+
+
+
+	/*Social and Logo */
+
+			.social{
+				height: 100%;
+			}
+
+			.social .fa {
+			    color: #b4b5b6;
+			    display: inline-table;
+			    float: right;
+			    font-size: 20px;
+			    height: 100%;
+			    padding: 12px;
+			    cursor: pointer;
+			    transition: all 0.5s ease;
+			}
+
+			.social .fa:hover{
+			    color: #ddd;
+			}
+
+			.social .info {
+			    color: #b4b5b6;
+			    display: inline-table;
+			    float: right;
+			    height: 100%;
+			    cursor: pointer;
+			    transition: all 0.5s ease;
+			}
+
+			.social .info:hover{
+			    color: #ddd;
+			}
+
+
+			#dacosto {
+			    display: inline-block;
+			    height: 24px;
+			    float: right;
+			}
+
+
+
+/*	Navgation Go Up*/
+#goUp {
+    bottom: 10px;
+    cursor: pointer;
+    display: none;
+    font-size: 22px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    line-height: 20px;
+}
+
+
+
+
+			#goUp:hover {
+				color: #ddd;
+			}
+
+
+#embed {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    line-height: 5px;
+    padding: 5px;
+    z-index: 999;
+}
+
+
+.mmImage {
+    width: 265px;
+}
+.mmImageSmall{
+	width: 163px;
+}
+			
+/*			transition-duration: 0.2s;
+			transform: rotate(90deg);
+*/
+
+
+.extraInfoText{
+	padding-top: 5px;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
+.showListe{
+	max-height: 600px;
+	overflow: auto;
+}
+
+/*.modal-dialog {
+    margin: 30px auto;
+    width: 943px;
+}
+*/
+
+.listeSendungenLink{
+	cursor: pointer;
+	padding-left: 11px;
+	transition: all 0.5s ease 0s;
+
+}
+
+
+.listeSendungenLink:hover{
+	opacity: 0.8;
+	
+}
+		</style>
+
+
+
+
+
+</head>
+	
+<body>
+
+
+		<!-- Modal -->
+	<div class="modal " id="embedModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Einbetten</b>
+	      </div>
+	      <div class="modal-body">
+				<p>Die Diagramme dürfen im Sinne der Creative Commons-Lizenz mit Namensnennung (CC:by) verwendet werden. Welches wollen Sie nutzen?</p>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios1" value="Frauenquote" checked>
+				    Frauenquote
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios2" value="Parteien">
+				    Politiker
+				  </label>
+				</div>
+				<div class="radio ">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios3" value="Themengebiete">
+				    Themengebiete
+				  </label>
+				</div>
+				<div class="radio">
+				  <label>
+				    <input type="radio" name="optionsRadios" id="optionsRadios3" value="Altersverteilung">
+				    Altersverteilung
+				  </label>
+				</div>
+
+				<form>
+				  <div class="form-group">
+				    <label for="exampleInputEmail1">Code zum Einbetten:</label>
+				    <input type="text" class="form-control" id="embedLink" value='<iframe src="http://apps.lokaler.com/meinungsmaschine/embed.html#frauenquote" width="580px" height="435px"></iframe>'>
+				  </div>
+				</form>
+
+				<!-- meinungsmaschine.de/embed/#/frauenquote 
+					window.location.hash
+			-->
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="frauenModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Frauenanteil</b>
+	      </div>
+	      <div class="modal-body">
+				<p class = "textFM"></p>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="polModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Politikeranteil</b>
+	      </div>
+	      <div class="modal-body">
+				<p class = "textPol"></p>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="katModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Katgorien</b>
+	      </div>
+	      <div class="modal-body">
+				<p class = "textKat"></p>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="altModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Altersverteilung</b>
+	      </div>
+	      <div class="modal-body">
+				<p class = "textAlt"></p>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Info</b>
+	      </div>
+	      <div class="modal-body">
+	      	<p>
+				Die „Meinungsmaschine“ beobachtet seit Januar 2017 fortlaufend die vier großen Poltik-Talkshows im deutschen Fernsehen: Anne Will, Sandra Maischberger, Hart aber Fair & Maybrit Illner. Die neueste Sendung wird automatisch von der jeweiligen Website eingelesen (sobald sie dort auf der Archivseite eingetragen wird). 
+				<br><br>
+				Redaktionell ergänzen wir Angaben wie Geschlecht, Partei und Alter bei den Personen. Zudem ordnen wir die Sendungen in ein Themengebiet (z.B. Außenpolitik) ein und vergeben ein Schlagwort (z.B. Ukraine)
+
+				<br><br>
+				Download:  
+				<a href="./data/meinungsmaschineData.csv" download>Gästeliste</a> - Stand: <span class = "stand"></span><br>
+
+				<span data-toggle="modal" data-target="#showsModal">Liste aller Sendungen <a style="cursor:pointer" >anzeigen</a></span><br><br>
+				Eine Arbeit von <a href="https://www.lokaler.de/" target="_blank">Lokaler</a> aus Berlin, Februar 2017<br><br>
+				Konzept/Produktion: Lorenz Matzat<br>
+				Programmierung: Hans Hack<br>
+				Redaktion: Linda Rath-Wiggins<br>
+				Scraper: Giuseppe Di Vincenzo<br><br>
+				Kontakt: info@lokaler.com<br><br>
+				<a href="https://www.lokaler.de/kontakt/" target="_blank">
+					Impressum	
+				</a>
+				<br><br>
+				Besuche der Website werden mit dem Open Source-Tool Piwik ausgewertet.
+
+
+			</p>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<div class="modal " id="showsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        <b class="modal-title" id="myModalLabel">Liste aller Sendungen</b>
+	      </div>
+	      <div class="modal-body showListe" id = "showListe">
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+
+
+
+
+
+
+
+<!-- Website -->
+
+	<div class="container">
+
+		<div id = "top" class="row">
+
+			<!-- Top Leiste -->
+			<div class="row">
+				<div class="col-sm-5 col-xs-12">
+					<img src="img/mm570.png" class="img-responsive pull-left mmImage" alt="mm">
+				</div>
+
+				<div class="col-sm-7 col-xs-12 social">
+					<a href="http://lokaler.de" target="_blank">
+						<img id="dacosto" alt="dacosto" src="img/lokaler_logo.png">
+					</a>
+					<a href="https://www.facebook.com/sharer/sharer.php?url=http%3A%2F%2Fapps.lokaler.de%2Fmeinungsmaschine%2F&text=Die „Meinungsmaschine“ beobachtet fortlaufend Poltik-Talkshows: A. Will, S. Maischberger, hart aber fair & M. Illner http://apps.lokaler.de/meinungsmaschine/" target="_blank">
+						<i class="fa fa-facebook"></i>
+					</a>
+
+					<a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fapps.lokaler.de%2Fmeinungsmaschine%2F&text=Die Meinungsmaschine beobachtet Gäste und Themen von Polit-Talkshows" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+
+					<span class = "infoButton pull-right" data-toggle="modal" data-target="#infoModal">Info</span>
+
+				</div>
+			</div>
+			
+
+			<!-- graphicContainers -->
+			<div class="row" id = "graphicContainer">
+
+
+
+				<div class="col-md-12">
+					<!-- <h4><span class = "anzahlShows"></span> Sendungen mit <span class = "anzahlGaeste"></span> Gästen - läuft seit 01.01.2014</h4> -->
+					<h4>4 Talkshows, <span class = "anzahlShows"></span> Sendungen, <span class = "anzahlGaeste"></span> Gäste - ab Januar 2017<span data-toggle="modal" data-target="#embedModal" id = "embed" class = "hidden-xs pull-right"><small><i id= "einbetten" class="fa fa-code"></i> einbetten</small> </span></h4>
+					<!-- <small>163 Polit-Talkshows mit 842 Gästen</small> -->
+					
+					<br>
+
+
+						<div class = "visible-sm-block visible-xs-block navsmall row">
+								<div class="col-sm-3  col-xs-6  navigation navActive" value = "0">Frauenanteil</div>
+								<div class="col-sm-3  col-xs-6 navigation" value = "1">Politiker</div>
+								<div class="col-sm-3  col-xs-6 navigation" value = "2">Themen</div>
+								<div class="col-sm-3  col-xs-6  navigation" value = "3">Alter</div>
+						</div> 
+	
+					
+				</div>
+
+
+				<!-- Navigation -->
+				<div class="col-md-2 hidden-sm hidden-xs">
+					<div class="navigation navActive" value = "0">Frauenanteil</div>
+				  	<div class="navigation" value = "1">Politiker</div>
+				  	<div class="navigation" value = "2">Themen</div>
+				  	<div class="navigation" value = "3">Alter</div>
+				</div>
+
+
+				<!-- Infos -->
+				<div class="col-md-10">
+
+
+					<!-- Carousel -->
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+
+					  <!-- Indicators -->
+					  <ol class="carousel-indicators">
+					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+					    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+					  </ol>
+
+					  <!-- Wrapper for slides -->
+					  <div class="carousel-inner" role="listbox">
+					    <div class="item active" value = "0">
+
+
+
+							<!-- Frauenanteil -->
+							<div class="row" data-toggle="modal" data-target="#frauenModal">
+								<div class="col-xs-12 visible-xs-block">
+									<h4> <small >mehr Info</small></h4>
+								</div>
+							</div>
+							<div class="row">
+								<!-- Text-->
+								<div class="col-md-3 col-sm-4 hidden-xs">
+									<h4>Frauenanteil</h4>
+									<p class = "textFM"></p>	
+								</div>
+								<!-- Barchart -->
+							  	<div class="col-lg-6 col-md-6 col-sm-7 col-xs-10" id = "barchartFM" ></div>
+							  	<!-- Titelnamen -->
+							  	<div class="col-md-1 col-sm-1 col-xs-2 extraInfoText noPaddingLeft">
+							  		<div class = "infoContent gesamtBar" >Gesamt</div>
+							  		<div class = "infoContent " >Hart a. F.</div>
+							  		<div class = "infoContent " >Illner</div>							  		
+							  		<div class = "infoContent " >Maischberger</div>
+							  		<div class = "infoContent " >Will</div>			  		
+							  	</div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-lg-2 col-md-2 hidden-sm hidden-xs extraInfoText" id = "infoFM">							
+							  	</div>
+
+							</div>
+
+					    </div>
+					    <div class="item" value = "1">
+
+					    	<div class="row" data-toggle="modal" data-target="#polModal">
+								<div class="col-xs-12 visible-xs-block">
+									<h4> <small >mehr Info</small></h4>
+								</div>
+							</div>
+
+							<!-- Partei -->
+							<div class="row">
+								<!-- Text-->
+								<div class="col-md-3 col-sm-4 hidden-xs">
+									<h4>Politikeranteil</h4>
+									<p class = "textPol"></p>	
+								</div>
+								<!-- Barchart -->
+							  	<div class="col-lg-6 col-md-6 col-sm-7 col-xs-10" id = "barchartPol" >
+							  	</div>
+							  	<!-- Titelnamen -->
+							  	<div class="col-md-1 col-sm-1 col-xs-2 extraInfoText noPaddingLeft">
+							  		<div class = "infoContent gesamtBar" >Gesamt</div>
+							  		<div class = "infoContent " >Hart a. F.</div>
+							  		<div class = "infoContent " >Illner</div>							  		
+							  		<div class = "infoContent " >Maischberger</div>
+							  		<div class = "infoContent " >Will</div>			  		
+							  	</div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-lg-2 col-md-2 hidden-sm hidden-xs extraInfoText" id = "infoPol">							
+							  	</div>
+							</div>
+						</div>
+
+
+				   		<div class="item" value = "2">
+
+				   			<div class="row" data-toggle="modal" data-target="#katModal">
+								<div class="col-xs-12 visible-xs-block">
+									<h4> <small >mehr Info</small></h4>
+								</div>
+							</div>
+
+							<!-- Kategorie -->
+							<div class="row">
+								<!-- Text-->
+								<div class="col-md-3 col-sm-4 hidden-xs">
+									<h4>Themengebiete</h4>
+									<p class = "textKat"></p>	
+								</div>
+								<!-- Barchart -->
+							  	<div class="col-lg-6 col-md-6 col-sm-7 col-xs-10" id = "barchartKat" >
+							  	</div>
+							  	<!-- Titelnamen -->
+							  	<div class="col-md-1 col-sm-1 col-xs-2 extraInfoText noPaddingLeft">
+							  		<div class = "infoContent gesamtBar" >Gesamt</div>
+							  		<div class = "infoContent " >Hart a. F.</div>
+							  		<div class = "infoContent " >Illner</div>							  		
+							  		<div class = "infoContent " >Maischberger</div>
+							  		<div class = "infoContent " >Will</div>			  		
+							  	</div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-lg-2 col-md-2 hidden-sm hidden-xs extraInfoText" id = "infoKat">							
+							  	</div>
+							</div>
+					    </div>
+
+				    	<div class="item" value = "3">
+				   			<div class="row" data-toggle="modal" data-target="#altModal">
+								<div class="col-xs-12 visible-xs-block">
+									<h4> <small>mehr Info</small></h4>
+								</div>
+							</div>
+							<!-- Alters -->
+							<div class="row">
+								<!-- Text-->
+								<div class="col-md-3 col-sm-4 hidden-xs">
+									<h4>Altersverteilung</h4>
+									<p class = "textAlt"></p>	
+								</div>
+								<!-- Barchart -->
+							  	<div class="col-lg-6 col-md-6 col-sm-7 col-xs-10" id = "barchartAlt" >
+							  	</div>
+							  	<!-- Titelnamen -->
+							  	<div class="col-md-1 col-sm-1 col-xs-2 extraInfoText noPaddingLeft">
+							  		<div class = "infoContent gesamtBar" >Gesamt</div>
+							  		<div class = "infoContent " >Hart a. F.</div>
+							  		<div class = "infoContent " >Illner</div>							  		
+							  		<div class = "infoContent " >Maischberger</div>
+							  		<div class = "infoContent " >Will</div>			  		
+							  	</div>
+							  	<!-- Barchart Extra Info -->
+							  	<div class="col-lg-2 col-md-2 hidden-sm hidden-xs extraInfoText" id = "infoAlt">							
+							  	</div>
+							</div>
+					    </div>
+
+					  </div>
+
+					  <!-- Controls -->
+					  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					  </a>
+					  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					  </a>
+					</div>
+
+				</div>
+
+
+
+				<div class = "col-xs-12" id = "standInfo">
+					<p class="pull-left listeSendungenLink" data-toggle="modal" data-target="#showsModal"><i class="fa fa-list"></i><small>&nbsp;Liste aller Sendungen</small></p>
+					<p class="pull-right"><small>letzte Aktualisierung: <span class = "stand"></span></small></p>
+				</div>
+
+			</div>
+
+			
+
+		</div>
+
+
+		<div id = "bottom" class="row">
+
+			<div id = "fixedContainer">
+
+
+
+				<div class="row">
+					<div class="col-md-12" id = "showWhenFixed">
+						<img src="img/mm_embed366.png" class="img-responsive pull-right mmImageSmall" alt="mm">
+					</div>
+					<div class="col-md-12">
+
+						<h4>Die <span id = "anzahlDerGaeste"></span> Gäste bei <span id = "anzahlDerShows"></span>Sendungen setzen sich aus folgenden <span id = "anzahlDerPersonen"></span> Personen zusammen</h4>
+					</div>
+				</div>
+
+				<!-- Buttons -->
+				<div class="row" id = "buttonsRow">
+
+					<div class="col-md-9 col-xs-12">
+						<div class="row" id = "buttonRow">
+							<div class="col-sm-3 col-xs-6 noPaddingRight"><div id = "buttonHart" class = "topBarShows showButton">Hart aber Fair<i class="fa fa-check"></i></div></div>
+							<div class="col-sm-3 col-xs-6 noPaddingLeft"><div id = "buttonIllner" class = "topBarShows showButton">Maybrit Illner<i class="fa fa-check"></i></div></div>
+							<div class="col-sm-3 col-xs-6 noPaddingRight"><div id = "buttonMaischberger" class = "topBarShows showButton">Sandra Maischberger<i class="fa fa-check"></i></div></div>
+							<div class="col-sm-3 col-xs-6 noPaddingLeft"><div id = "buttonWill" class = "topBarShows showButton">Anne Will<i class="fa fa-check"></i></div></div>
+							
+						</div>
+					</div> 
+
+
+
+					<div class="col-md-3 col-xs-12 hidden-sm hidden-xs">
+
+						<form class="form-inline">
+						    <div class="input-group col-xs-12">
+						      <div class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></div>
+						      <input id = "topInnerSearchBar" type="text" class="form-control" placeholder="Personensuche">
+						    </div>
+						</form>
+
+					</div>
+
+				</div>
+
+				<div id = "timeLine">
+					<div class= "placeholder hidden-xs"></div>
+					<div id= "barMainTimeline" class = "bar"></div>
+					<div class = "timeBar"></div>
+				</div>	
+
+			</div>
+
+			<div id = "alleGaesteWrapper"></div>
+
+		</div>
+
+
+		<div id = "goUp"><i class="fa fa-angle-up"></i><br><small>nach oben</small></div>
+
+
+
+	</div>
+
+
+
+
+	<script src="js/script.js"></script> 
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://dacosto.com/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 5]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://dacosto.com/piwik/piwik.php?idsite=5" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

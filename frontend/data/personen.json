@@ -1,0 +1,457 @@
+{
+    "gaesteData": [
+        {
+            "name": "Ilse Aigner",
+            "partei": "CSU",
+            "shows": [
+                {
+                    "sendungthema": "Trump macht ernst – wie warm müssen wir uns anziehen?",
+                    "sendungart": "Hart Aber Fair",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "30.01.17",
+                    "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/trumpmachternst-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Oskar Lafontaine",
+            "partei": "DIE LINKE",
+            "shows": [
+                {
+                    "sendungthema": "Trump macht ernst – wie warm müssen wir uns anziehen?",
+                    "sendungart": "Hart Aber Fair",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "30.01.17",
+                    "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/trumpmachternst-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Düzen Tekkal",
+            "partei": "",
+            "shows": [
+                {
+                    "sendungthema": "Bürger verunsichert - Wie umgehen mit kriminellen Zuwanderern?",
+                    "sendungart": "Anne Will",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "15.01.17",
+                    "sendunglink": "http://daserste.ndr.de/annewill/archiv/Buerger-verunsichert-Wie-umgehen-mit-kriminellen-Zuwanderern-,erste11290.html"
+                }
+            ]
+        },
+        {
+            "name": "Katja Kipping",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Schulz macht’s – linke Mehrheit gegen Merkel?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "26.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Schulz-SPD-Kanzlerkandidat-Linke-Mehrheit-gegen-Merkel-maybrit-illner-vom-26-Januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Edmund Stoiber",
+            "partei": "",
+            "shows": [
+                {
+                    "sendungthema": "Bürger verunsichert - Wie umgehen mit kriminellen Zuwanderern?",
+                    "sendungart": "Anne Will",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "15.01.17",
+                    "sendunglink": "http://daserste.ndr.de/annewill/archiv/Buerger-verunsichert-Wie-umgehen-mit-kriminellen-Zuwanderern-,erste11290.html"
+                }
+            ]
+        },
+        {
+            "name": "Katharina Nocun",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Heiko Maas",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Die Trumpokratie - Eine Gefahr für die freie Welt?",
+                    "sendungart": "Anne Will",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "05.02.17",
+                    "sendunglink": "http://daserste.ndr.de/annewill/archiv/Die-Trumpokratie-Eine-Gefahr-fuer-die-freie-Welt,erste11298.html"
+                },
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Carsten Linnemann",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Schulz macht’s – linke Mehrheit gegen Merkel?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "26.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Schulz-SPD-Kanzlerkandidat-Linke-Mehrheit-gegen-Merkel-maybrit-illner-vom-26-Januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Nina Käsehage",
+            "partei": "",
+            "shows": [
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Roger Johnson",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Der unberechenbare Präsident - stellt Trump die Welt auf den Kopf?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "19.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Der-unberechenbare-Praesident-stellt-Trump-die-Welt-auf-den-Kopf-maybrit-illner-vom-19-Januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Elmar Theveßen",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Nick Hein",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Polizisten – Prügelknaben der Nation?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "01.02.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/polizisten-pruegelknaben-der-nation-102.html"
+                }
+            ]
+        },
+        {
+            "name": "Stefan Aust",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Regina Lenders",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Polizisten – Prügelknaben der Nation?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "01.02.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/polizisten-pruegelknaben-der-nation-102.html"
+                }
+            ]
+        },
+        {
+            "name": "Erich Schmidt-Eenboom",
+            "partei": "Bündnis 90/Die Grünen",
+            "shows": [
+                {
+                    "sendungthema": "Der unberechenbare Präsident - stellt Trump die Welt auf den Kopf?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "19.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Der-unberechenbare-Praesident-stellt-Trump-die-Welt-auf-den-Kopf-maybrit-illner-vom-19-Januar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Susanne Neumann",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "25.01.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Wolfgang Ischinger",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Trump macht ernst - ist dieser Präsident zu stoppen?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "09.02.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Trump-macht-ernst-ist-dieser-Praesident-zu-stoppen-maybrit-illner-vom-9-Februar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Wolfgang Schäuble",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Zu Gast: Wolfgang Schäuble (Bundesfinanzminister)",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "08.02.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/zu-gast-bundesfinanzminister-wolfgang-schaeuble-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Dirk Schümer",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "25.01.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Josef Braml",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Trump macht ernst - ist dieser Präsident zu stoppen?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Außenpolitik",
+                    "sendungdatum": "09.02.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Trump-macht-ernst-ist-dieser-Praesident-zu-stoppen-maybrit-illner-vom-9-Februar-2017-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Andreas Scheuer",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                    "sendungart": "Illner",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "12.01.17",
+                    "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html"
+                },
+                {
+                    "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "25.01.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Hans-Ulrich Jörges",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "25.01.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html"
+                }
+            ]
+        },
+        {
+            "name": "Malu Dreyer",
+            "partei": "keine Partei",
+            "shows": [
+                {
+                    "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                    "sendungart": "Maischberger",
+                    "sendungkategorie": "Innenpolitik",
+                    "sendungdatum": "25.01.17",
+                    "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html"
+                }
+            ]
+        }
+    ],
+    "shows": [
+        [
+            {
+                "sendungart": "Illner",
+                "sendungdatum": "17-02-09",
+                "sendungthema": "Trump macht ernst - ist dieser Präsident zu stoppen?",
+                "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Trump-macht-ernst-ist-dieser-Praesident-zu-stoppen-maybrit-illner-vom-9-Februar-2017-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fghgfh"
+            },
+            {
+                "sendungart": "Maischberger",
+                "sendungdatum": "17-02-08",
+                "sendungthema": "Zu Gast: Wolfgang Schäuble (Bundesfinanzminister)",
+                "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/zu-gast-bundesfinanzminister-wolfgang-schaeuble-100.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fgh"
+            },
+            {
+                "sendungart": "Anne Will",
+                "sendungdatum": "17-02-05",
+                "sendungthema": "Die Trumpokratie - Eine Gefahr für die freie Welt?",
+                "sendunglink": "http://daserste.ndr.de/annewill/archiv/Die-Trumpokratie-Eine-Gefahr-fuer-die-freie-Welt,erste11298.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fghfgh"
+            },
+            {
+                "sendungart": "Illner",
+                "sendungdatum": "17-02-02",
+                "sendungthema": "Trumps Egotrip – Mauern gegen den Rest der Welt?",
+                "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Trumps-Egotrip-Mauern-gegen-den-Rest-der-Welt-maybrit-illner-vom-2-Februar-2017-100.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fghfgh"
+            },
+            {
+                "sendungart": "Maischberger",
+                "sendungdatum": "17-02-01",
+                "sendungthema": "Polizisten – Prügelknaben der Nation?",
+                "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/polizisten-pruegelknaben-der-nation-102.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "ghfgh"
+            },
+            {
+                "sendungart": "Hart Aber Fair",
+                "sendungdatum": "17-01-30",
+                "sendungthema": "Trump macht ernst – wie warm müssen wir uns anziehen?",
+                "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/trumpmachternst-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "gf"
+            },
+            {
+                "sendungart": "Anne Will",
+                "sendungdatum": "17-01-29",
+                "sendungthema": "Der Kandidat - Können Sie Kanzler, Herr Schulz?",
+                "sendunglink": "http://daserste.ndr.de/annewill/archiv/Der-Kandidat-Koennen-Sie-Kanzler-Herr-Schulz,erste11296.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fgh"
+            },
+            {
+                "sendungart": "Illner",
+                "sendungdatum": "17-01-26",
+                "sendungthema": "Schulz macht’s – linke Mehrheit gegen Merkel?",
+                "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Schulz-SPD-Kanzlerkandidat-Linke-Mehrheit-gegen-Merkel-maybrit-illner-vom-26-Januar-2017-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fghfgh"
+            },
+            {
+                "sendungart": "Maischberger",
+                "sendungdatum": "17-01-25",
+                "sendungthema": "Alles auf Schulz: Kann er Merkel stürzen?",
+                "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/alles-auf-schulz-kann-er-merkel-stuerzen-100.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fhfgh"
+            },
+            {
+                "sendungart": "Hart Aber Fair",
+                "sendungdatum": "17-01-23",
+                "sendungthema": "Mensch raus, Wolf rein – wie viel Naturschutz verträgt unser Land?",
+                "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/menschrauswolfrein-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fgh"
+            },
+            {
+                "sendungart": "Anne Will",
+                "sendungdatum": "17-01-22",
+                "sendungthema": "Trump im Amt - Verändert das die Weltordnung?",
+                "sendunglink": "http://daserste.ndr.de/annewill/archiv/Trump-im-Amt-Veraendert-die-Weltordnung,erste11294.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fghfgh"
+            },
+            {
+                "sendungart": "Illner",
+                "sendungdatum": "17-01-19",
+                "sendungthema": "Der unberechenbare Präsident - stellt Trump die Welt auf den Kopf?",
+                "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Der-unberechenbare-Praesident-stellt-Trump-die-Welt-auf-den-Kopf-maybrit-illner-vom-19-Januar-2017-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fgh"
+            },
+            {
+                "sendungart": "Maischberger",
+                "sendungdatum": "17-01-18",
+                "sendungthema": "Trump macht Ernst: Muss die Welt vor ihm zittern?",
+                "sendunglink": "http://www.daserste.de/unterhaltung/talk/maischberger/sendung/trump-macht-ernst-muss-die-welt-vor-ihm-zittern-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fghgfh"
+            },
+            {
+                "sendungart": "Hart Aber Fair",
+                "sendungdatum": "17-01-16",
+                "sendungthema": "Sicherheit, Steuern, Rente – der Wahlcheck 2017!",
+                "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/sicherheitsteuernrente-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "gh"
+            },
+            {
+                "sendungart": "Anne Will",
+                "sendungdatum": "17-01-15",
+                "sendungthema": "Bürger verunsichert - Wie umgehen mit kriminellen Zuwanderern?",
+                "sendunglink": "http://daserste.ndr.de/annewill/archiv/Buerger-verunsichert-Wie-umgehen-mit-kriminellen-Zuwanderern-,erste11290.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fghfghfg"
+            },
+            {
+                "sendungart": "Illner",
+                "sendungdatum": "17-01-12",
+                "sendungthema": "Terror mit Ansage – was tun mit den Gefährdern?",
+                "sendunglink": "https://www.zdf.de//politik/maybrit-illner/Terror-mit-Ansage-was-tun-mit-den-Gefaehrdern-vom-12-januar-2017-100.html",
+                "sendungkategorie": "Innenpolitik",
+                "sendungschlagwort": "fghfgh"
+            },
+            {
+                "sendungart": "Hart Aber Fair",
+                "sendungdatum": "17-01-09",
+                "sendungthema": "Neues Deutschland – bringt Härte gegen Zuwanderer mehr Sicherheit?",
+                "sendunglink": "http://www1.wdr.de/daserste/hartaberfair/sendungen/neuesdeutschland-100.html",
+                "sendungkategorie": "Außenpolitik",
+                "sendungschlagwort": "fgh"
+            }
+        ]
+    ]
+}

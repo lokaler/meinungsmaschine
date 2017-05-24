@@ -1,0 +1,89 @@
+WITH 
+
+-- Abfrage OHNE Join
+
+	-- Erster/Letzter Eintrag
+	firstEntry AS (SELECT to_char(sendungdatum,'dd.mm.yy') AS firstentry From shows WHERE edited = true <%= show %> order by sendungdatum limit 1), 
+	latestEntry AS (SELECT to_char(sendungdatum,'dd.mm.yy') AS lastentry From shows WHERE edited = true <%= show %> order by sendungdatum desc limit 1),
+
+
+
+	-- Anzahl aller Personen
+	AnzahlPersonenAlleShows AS (SELECT count(id) AS anzahlPersonenAlleShows FROM personen WHERE edited = true),
+
+	-- Anzahl aller shows
+	AnzahlShows AS (SELECT count(id) AS anzahlShows FROM shows WHERE edited = true <%= show %>), 
+
+
+	-- Themen
+	InnenpolitikTotal AS (SELECT count(id) AS Innenpolitik FROM shows  WHERE sendungkategorie = 'Innenpolitik' AND edited = true <%= show %>), 
+	AussenpolitikTotal AS (SELECT count(id) AS Aussenpolitik FROM shows  WHERE sendungkategorie = 'Außenpolitik' AND edited = true <%= show %>), 
+	WirtschaftTotal AS (SELECT count(id) AS Wirtschaft FROM shows  WHERE sendungkategorie = 'Wirtschaft' AND edited = true <%= show %>), 
+	GesellschaftTotal AS (SELECT count(id) AS Gesellschaft FROM shows  WHERE sendungkategorie = 'Gesellschaft' AND edited = true <%= show %>),
+
+	Schlagwort AS (SELECT ARRAY(SELECT sendungschlagwort AS schalgwort FROM shows WHERE edited = 'true' <%= show %> ORDER BY sendungschlagwort) AS schlagwort),
+
+
+
+
+-- Abfrage mit Join
+alleDaten AS(
+
+	SELECT name, partei, sex, sendungthema, sendungart, sendunglink, sendungkategorie, date_part('year',age(sendungdatum, alter)) as age
+
+	FROM shows as s
+	 
+	INNER JOIN psrelation as psr 
+	  ON s.id = psr.idshow 
+
+	INNER JOIN personen as p 
+	  ON psr.idperson = p.id 
+	 
+	WHERE sendungdatum > '2013-11-30' AND p.edited = true AND s.edited = true <%= show %>
+), 
+
+
+-- Gaeste
+AlleGaeste AS(SELECT count(sex) AS alleGaeste FROM alleDaten), 
+Frauen AS(SELECT count(sex) AS frauenGeasteGesamt FROM alleDaten WHERE sex='W' ), 
+Maenner AS(SELECT count(sex) AS maennerGaesteGesamt FROM alleDaten WHERE sex='M'), 
+
+-- Partei
+SPD AS (SELECT count(partei) AS spd FROM alleDaten WHERE partei='SPD'), 
+CDU AS(SELECT count(partei) AS cdu FROM alleDaten WHERE partei='CDU'), 
+CSU AS(SELECT count(partei) AS csu FROM alleDaten WHERE partei='CSU'), 
+CDUCSU AS(SELECT count(partei) AS cducsu FROM alleDaten WHERE partei='CSU' OR partei='CDU'), 
+FDP AS(SELECT count(partei) AS fdp FROM alleDaten WHERE partei='FDP'), 
+Linke AS(SELECT count(partei) AS linke FROM alleDaten WHERE partei='Die Linke'), 
+Gruene AS(SELECT count(partei) AS gruene FROM alleDaten WHERE partei='Bündnis 90/Die Grünen'),
+AfD AS(SELECT count(partei) AS afD FROM alleDaten WHERE partei='AfD'),
+Andere AS(SELECT count(partei) AS andere FROM alleDaten WHERE partei != 'keine Partei' AND partei !='SPD' AND partei !='CDU' AND partei !='CSU' AND partei !='FDP' AND  partei != 'Die Linke' AND partei != 'Bündnis 90/Die Grünen'AND partei !='AfD'),
+AllleMitPartei AS (SELECT count(partei) AS allleMitPartei FROM alleDaten WHERE partei != 'keine Partei'),
+
+KeinePartei AS(SELECT count(partei) AS keinePartei FROM alleDaten WHERE partei='keine Partei'),
+ 
+-- Alter
+Alter80PlusTotal AS (SELECT count(age) AS alter80PlusTotal FROM alleDaten WHERE age >= 80 AND age < 200), 
+Alter70Bis79Total AS (SELECT count(age) AS alter70Bis79Total FROM alleDaten WHERE age >= 70 AND age < 80), 
+Alter60Bis69Total AS (SELECT count(age) AS alter60Bis69Total FROM alleDaten WHERE age >= 60 AND age < 70), 
+Alter50Bis59Total AS (SELECT count(age) AS alter50Bis59Total FROM alleDaten WHERE age >= 50 AND age < 60 ), 
+Alter40Bis49Total AS (SELECT count(age) AS alter40Bis49Total FROM alleDaten WHERE age >= 40 AND age < 50 ), 
+Alter30Bis39Total AS (SELECT count(age) AS alter30Bis39Total FROM alleDaten WHERE age >= 30 AND age < 40), 
+Alter0Bis29Total AS (SELECT count(age) AS alter0Bis29Total FROM alleDaten WHERE age >= 0 AND age < 30), 
+AlleMitAlter AS (SELECT count(age) AS alleMitAlter FROM alleDaten WHERE age > 0),
+altersDurchschnitt AS (SELECT sum(age) / count(age) AS altersdurchschnitt FROM alleDaten WHERE age < 200),
+maxAge AS (SELECT name AS aeltestergast, age AS alteraeltestergast FROM alleDaten WHERE age > 0 order by age desc limit 1 ),
+minAge AS (SELECT name AS juengstergast, age AS alterjuengstergast FROM alleDaten WHERE age > 0 order by age limit 1 )
+
+
+
+
+SELECT * From 
+firstEntry,latestEntry,
+anzahlPersonenAlleShows, anzahlShows,
+innenpolitikTotal, aussenpolitikTotal, wirtschaftTotal, gesellschaftTotal,Schlagwort,
+alleGaeste,
+Frauen,Maenner, 
+spd , cdu, csu, cducsu, fdp,linke,gruene,afd,andere,allleMitPartei,keinePartei,
+alter0Bis29Total,alter30Bis39Total,alter40Bis49Total,alter50Bis59Total,alter60Bis69Total,alter70Bis79Total,alter80PlusTotal,alleMitAlter,altersdurchschnitt,maxAge,minAge
+
